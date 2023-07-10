@@ -1,0 +1,176 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+.head {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #2563eb;
+    width: 90%;
+    margin: 1px auto;
+    padding: 1rem;
+    border-bottom-left-radius: 12px;
+    border-bottom-right-radius: 12px;
+}
+
+.head img {
+    margin-bottom: 1rem;
+    max-width: 100%;
+    width: 300px;
+    height: auto;
+    border-radius: 100%;
+    /* animation */
+    animation: pulse 1.9s infinite;
+}
+.head p{
+    font-family: 'Tangerine', cursive;
+    font-size: 2rem;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0px rgba(248, 248, 248, 0.726);
+    }
+
+    100% {
+        box-shadow: 0 0 0 30px rgba(255, 255, 255, 0);
+    }
+}
+
+
+/* grid */
+.grid{
+    margin-top: 3rem;
+}
+.sub-grid {
+    
+    /* border: 2px solid red; */
+    width: 90%;
+    margin: auto;
+    height: 150vh;
+    display: grid;
+    /* it defines 4 box with same coordinates */
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    /* it will define as row wise height and width too */
+    grid-template-rows: 1fr 1fr 0.8fr 0.3fr;
+    gap: 1rem;
+    grid-template-areas: "grid1 grid1 grid2 grid2"
+        "grid3 grid3 grid3 grid4"
+        "grid5 grid6 grid6 grid6"
+        "grid7 grid7 grid7 grid7"
+}
+
+.grid-content {
+    background-color: #2563eb;
+    padding: 2rem 2rem;
+    border-radius: 12px;
+    transition: ease 1s;
+    transform: skew(-5deg);
+    box-shadow: 5px 6px #2563eb;
+    border: 1px solid white;
+    
+}
+.grid-content:hover{
+    transform: scale(1.01);
+}
+
+.grid-content:nth-child(2n+1) {
+    background-color: #eff6ff;
+}
+#grid1{
+    grid-area: grid1;
+}
+#grid2{
+    grid-area: grid2;
+}
+#grid3{
+    grid-area: grid3;
+}
+#grid4{
+    grid-area: grid4;
+}
+#grid5{
+    grid-area: grid5;
+}
+#grid6{
+    grid-area: grid6;
+}
+#grid7{
+    grid-area: grid7;
+}
+
+#grid2 div progress[value]{
+    width: 100%;
+}
+
+#grid3 h1{
+    letter-spacing: 0.01em;
+}
+#grid3 p{
+    margin-bottom: 1rem;
+}
+#grid3 a{
+    background-color: white;
+    padding: 0.5rem 2rem;
+    text-decoration: none;
+    font-weight: bold;
+}
+#grid4 ul{
+    padding: 1rem;
+}
+
+#grid5 li{
+    list-style: none;
+    margin: 1rem 0rem;
+    cursor: pointer;
+}
+#grid5 a{
+    font-size: 1.2rem;
+}
+#grid6 span{
+    color: white;
+    font-weight: bold;
+}
+#grid6 h1{
+    margin-bottom: 1rem;
+}
+#grid7 a{
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    color: #2563eb;
+    transition: all 1s;
+    
+}
+#grid7 a:hover{
+    transform: scale(1.1);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/* responsive */
+@media (width < 650px){
+    .sub-grid{
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        grid-template-areas: "grid1"
+        "grid2"
+        "grid3"
+        "grid4"
+        "grid5"
+        "grid6"
+        "grid7";
+        padding: 0.7rem;
+        
+    }
+}
